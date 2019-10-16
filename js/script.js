@@ -115,5 +115,5 @@ var quotes = [
 printQuote(); // print the first quote
 auto_refresh(); // refresh it every 20 seconds, and change the background color
 
-// Event listener with the button that calls the function printQuote()
+// Event listener linked to the button that calls the function printQuote()
 document.getElementById("Show_Another").addEventListener("click", printQuote);
