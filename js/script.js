@@ -19,10 +19,10 @@ function printQuote() {
   randBackgroundColor();
 }
 
-// refresh it every 15 seconds, and change the background color
+// refresh it every 20 seconds, and change the background color
 function auto_refresh() {
-  setInterval(printQuote,5000);
-  setInterval(randBackgroundColor,5000);
+  setInterval(printQuote,20000);
+  setInterval(randBackgroundColor,20000);
 }
 
 // get a ramdom object from the array and return the randQuote variable
@@ -113,7 +113,7 @@ var quotes = [
 ];
 
 printQuote(); // print the first quote
-auto_refresh(); // refresh it every 15 seconds, and change the background color
+auto_refresh(); // refresh it every 20 seconds, and change the background color
 
 // Event listener with the button that calls the function printQuote()
 document.getElementById("Show_Another").addEventListener("click", printQuote);
