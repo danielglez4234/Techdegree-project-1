@@ -1,0 +1,74 @@
+/* css */
+body{
+  transition: background 1s ease;
+}
+/* ".shadow" is the white blur outline of the background, this is only to make the random color generation less uglier (ㆆ ͜ʖㆆ)*/
+.shadow{
+  position: absolute;
+  width:100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  -webkit-box-shadow: inset 0px 0px 300px -110px rgba(255,255,255,1);
+  -moz-box-shadow: inset 0px 0px 300px -110px rgba(255,255,255,1);
+  box-shadow: inset 0px 0px 300px -110px rgba(255,255,255,1);
+}
+
+/* "#quote-box" the DIV where the quotes appear */
+#quote-box{
+  opacity: 1;
+  padding-top: 100px;
+  padding-bottom: 48px;
+  padding-left: 10px;
+  padding-right:10px ;
+  text-align: center;
+  color:white;
+  transition: font-size 1s ease;:
+}
+
+/*"container" is the black box that contain the letters*/
+.container{
+  background-color:black;
+  opacity: 0.7;
+  margin: 2% 15%;
+  width: 1000px;
+  position: fixed;
+}
+
+.category{
+  font-size: 40px;
+  text-align: left;
+  padding-left: 50px;
+  margin-top: -30px;
+}
+.quotes{
+  font-size: 60px;
+  font-weight: bold;
+  transition: left 1s ease;
+}
+
+.source{
+  font-size: 30px;
+}
+
+/*---Button---*/
+#Show_Another{
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  font-size: 20px;
+  padding: 10px;
+  background-color: #ffffff;
+  border: none;
+  color: black;
+  font-weight: bold;
+  font-style: italic;
+  transition: letter-spacing 0.2s ease;
+  opacity: 1;
+  cursor: pointer;
+  border-bottom-left-radius:30px ;
+}
+      #Show_Another:hover{
+        letter-spacing: 3px;
+        transition: letter-spacing 0.2s ease;
+      }
