@@ -15,7 +15,7 @@ function printQuote() {
   // calling the function getRandomQuote()
   quote = getRandomQuote();
   outputDiv.innerHTML = quote;
-  // call the function randBackColor() to change the color when the button "shows another quote" is pressed
+  // call the function randBackgroundColor() to change the color when the button "shows another quote" is pressed
   randBackgroundColor();
 }
 
