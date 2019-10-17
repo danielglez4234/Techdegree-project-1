@@ -9,6 +9,14 @@ function randBackgroundColor(){
   document.body.style.background = bgColor;
 }
 
+// get a ramdom object from the array and return the randQuote variable
+function getRandomQuote(){
+    //random quote
+    getquote = quotes[Math.floor(Math.random() * quotes.length)];
+
+return getquote;
+}
+
 // print quote function
 function printQuote() {
   var quote_boxDiv = document.getElementById('quote-box');
@@ -34,14 +42,6 @@ function printQuote() {
   quote_boxDiv.innerHTML = randQuote;
   // calling the function randBackgroundColor() to change the color when the button "shows another quote" is pressed
   randBackgroundColor();
-}
-
-// get a ramdom object from the array and return the randQuote variable
-function getRandomQuote(){
-    //random quote
-    getquote = quotes[Math.floor(Math.random() * quotes.length)];
-
-return getquote;
 }
 
 
