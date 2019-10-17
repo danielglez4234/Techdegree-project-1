@@ -11,13 +11,39 @@ function randBackgroundColor(){
 
 // print quote function
 function printQuote() {
-  var outputDiv = document.getElementById('quote-box');
+  var quote_boxDiv = document.getElementById('quote-box');
   // calling the function getRandomQuote()
-  quote = getRandomQuote();
-  outputDiv.innerHTML = quote;
-  // call the function randBackgroundColor() to change the color when the button "shows another quote" is pressed
+  getRandomQuote();
+
+  var randQuote = '';
+  randQuote += '<p class="category"><i>' + getquote.category + '</i></p>';
+  randQuote += '<p class="quotes"><i>\"' + getquote.quote + '\"</i></p>';
+  randQuote += '<p class="source"><strong>- </strong>' + getquote.source;
+
+  // check that the object citation is not empty
+  if (getquote.citation != '') {
+    randQuote += '<span class="citation">, ' + getquote.citation + '</span>';
+  }
+  // check that the object year is not empty
+  if (getquote.year != '') {
+    randQuote += '<span class="year">,  ' + getquote.year + '</span>';
+  }
+  randQuote += '</p>';
+
+  //print the random quote
+  quote_boxDiv.innerHTML = randQuote;
+  // calling the function randBackgroundColor() to change the color when the button "shows another quote" is pressed
   randBackgroundColor();
 }
+
+// get a ramdom object from the array and return the randQuote variable
+function getRandomQuote(){
+    //random quote
+    getquote = quotes[Math.floor(Math.random() * quotes.length)];
+
+return getquote;
+}
+
 
 // refresh it every 20 seconds, and change the background color
 function auto_refresh() {
@@ -25,27 +51,7 @@ function auto_refresh() {
   setInterval(randBackgroundColor,20000);
 }
 
-// get a ramdom object from the array and return the randQuote variable
-function getRandomQuote(){
-var randQuote = '';
-    //random quote
-    getquote = quotes[Math.floor(Math.random() * quotes.length)];
-    randQuote += '<p class="category"><i>' + getquote.category + '</i></p>';
-    randQuote += '<p class="quotes"><i>\"' + getquote.quote + '\"</i></p>';
-    randQuote += '<p class="source"><strong>- </strong>' + getquote.source;
 
-    // check that the object citation is not empty
-    if (getquote.citation != '') {
-      randQuote += '<span class="citation">, ' + getquote.citation + '</span>';
-    }
-
-    // check that the object year is not empty
-    if (getquote.year != '') {
-      randQuote += '<span class="year">,  ' + getquote.year + '</span>';
-    }
-    randQuote += '</p>';
-return randQuote;
-}
 
 
 // array of objects with 10 quotes
