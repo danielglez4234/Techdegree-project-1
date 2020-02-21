@@ -24,9 +24,9 @@ function printQuote() {
   getRandomQuote();
 
   var randQuote = '';
-  randQuote += '<p class="category"><i>' + getquote.category + '</i></p>';
-  randQuote += '<p class="quotes"><i>\"' + getquote.quote + '\"</i></p>';
-  randQuote += '<p class="source"><strong>- </strong>' + getquote.source;
+  randQuote += '<p class="category appear-animation"><i>' + getquote.category + '</i></p>';
+  randQuote += '<p class="quotes slide-quotes"><i>\"' + getquote.quote + '\"</i></p>';
+  randQuote += '<p class="source appear-animation"><strong>- </strong>' + getquote.source;
 
   // check that the object citation is not empty
   if (getquote.citation != '') {
@@ -40,17 +40,23 @@ function printQuote() {
 
   //print the random quote
   quote_boxDiv.innerHTML = randQuote;
+
   // calling the function randBackgroundColor() to change the color when the button "shows another quote" is pressed
   randBackgroundColor();
 }
 
 
 // refresh it every 20 seconds, and change the background color
+var timer;
 function auto_refresh() {
-  setInterval(printQuote,20000);
-  setInterval(randBackgroundColor,20000);
-}
+  printQuote();
+  clearInterval(timer); // when the "show another quote" button is pressed the timer will be reset
 
+  timer = setInterval(function (){
+    printQuote();
+    randBackgroundColor();
+  }, 20000);
+}
 
 
 
@@ -119,7 +125,7 @@ var quotes = [
 ];
 
 printQuote(); // print the first quote
-auto_refresh(); // refresh it every 20 seconds, and change the background color
+auto_refresh(); // print a new quote every 20 seconds, and change the background color
 
-// Event listener linked to the button that calls the function printQuote()
-document.getElementById("Show_Another").addEventListener("click", printQuote);
+// Event listener linked to the button that calls the function auto_refresh()
+document.getElementById("Show_Another").addEventListener("click", auto_refresh);
