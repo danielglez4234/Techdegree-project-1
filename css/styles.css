@@ -9,36 +9,42 @@ body{
   height: 100%;
   top: 0;
   left: 0;
-  box-shadow: inset 0px 0px 300px -110px rgba(255,255,255,1);
+  box-shadow: inset 0px 0px 300px -110px rgba(0,0,0);
 }
 
 /* "#quote-box" the DIV where the quotes appear */
 #quote-box{
-  opacity: 1;
   padding-top: 100px;
   padding-bottom: 48px;
   padding-left: 10px;
-  padding-right:10px ;
+  padding-right: 10px ;
   text-align: center;
-  color:white;
+  color: #333;
   transition: font-size 1s ease;
 }
 
 /*"container" is the black box that contain the letters*/
 .container{
-  background-color:black;
-  opacity: 0.7;
-  margin: 2% 15%;
-  width: 1000px;
+  background-color:white;
+  margin-left: 13%;
+  margin-right: 13%;
+  margin-top: 3%;
   position: fixed;
+  box-shadow: 6px 6px 20px black;
 }
 
 .category{
   font-size: 40px;
   text-align: left;
-  padding-left: 50px;
-  margin-top: -30px;
+  position: absolute;
+  top: 0;
+  left: 32px;
+  text-decoration: underline;
+  text-decoration-style: dashed;
+  text-decoration-color: #df0d49;
+  color: #dd0b4b;
 }
+
 .quotes{
   font-size: 60px;
   font-weight: bold;
@@ -49,6 +55,28 @@ body{
   font-size: 30px;
 }
 
+/*--Decoration--*/
+.decoration{
+  width: 0;
+  height: 0;
+  margin-left: auto;
+  margin-top: -60px;
+}
+    .dec-1{
+      border-left: 100px solid transparent;
+      border-bottom: 100px solid #3db69c;
+    }
+    .dec-2{
+      border-left: 80px solid transparent;
+      border-bottom: 80px solid #333;
+      margin-top: -80px;
+    }
+    .dec-3{
+      border-left: 60px solid transparent;
+      border-bottom: 60px solid #ae3c3c;
+      margin-top: -60px;
+    }
+
 /*---Button---*/
 #Show_Another{
   position: absolute;
@@ -56,17 +84,40 @@ body{
   right: 0px;
   font-size: 20px;
   padding: 10px;
-  background-color: #ffffff;
+  /* background-color: #333; */
+  background-image: linear-gradient(to right top, #597670, #50696a, #4a5b60, #454e54, #3f4246, #3e4251, #47405a, #573b5c, #83376a, #b32764, #dd0b4c, #f82020);
   border: none;
-  color: black;
+  color: white;
   font-weight: bold;
   font-style: italic;
-  transition: letter-spacing 0.2s ease;
+  transition: 0.2s ease;
   opacity: 1;
   cursor: pointer;
-  border-bottom-left-radius:30px ;
+  border-bottom-left-radius: 30px;
 }
       #Show_Another:hover{
-        letter-spacing: 3px;
-        transition: letter-spacing 0.2s ease;
+        letter-spacing: 1px;
+        transition: 0.2s ease;
       }
+      #Show_Another:active{
+        letter-spacing: 1.5px;
+        transition: 0.1s ease;
+      }
+
+
+/*--------Animations--------*/
+.slide-quotes{
+  animation: slide 0.6s forwards;
+}
+.appear-animation{
+  animation: appear 0.6s forwards;
+}
+@keyframes appear {
+  0% { opacity: 0;}
+  50% {opacity: 0.5;}
+  100% { opacity: 1;}
+}
+@keyframes slide {
+  0% { transform: translateX(100px); opacity: 0;}
+  100% { transform: translateX(0px%); opacity: 1;}
+}
